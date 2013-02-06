@@ -3,11 +3,15 @@
 var restrouteApp = angular.module('restrouteApp', [])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
-      .when('/:resource/:method/:id', {
+      .when('/resource1/:method/:id', {
         templateUrl: 'views/includeIt.html',
-        controller: 'MainCtrl'
+        controller: 'resource1'
+      })
+      .when('/resource2/:method/:id', {
+        templateUrl: 'views/includeIt.html',
+        controller: 'resource2'
       })
       .otherwise({
-        redirectTo: '/one/a/1'
+        redirectTo: '/resource1/a/1'
       });
   }]);
