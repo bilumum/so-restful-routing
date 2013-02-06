@@ -7,11 +7,7 @@ var restrouteApp = angular.module('restrouteApp', [])
         templateUrl: 'views/includeIt.html',
         controller: 'MainCtrl'
       })
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/one/a/1'
       });
   }]);
