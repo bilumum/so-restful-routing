@@ -1,7 +1,7 @@
 'use strict';
 
 restrouteApp.controller('resource1', function($scope,$routeParams,$http,$log) {
-  $scope.template='views/resource1/' + $routeParams.method + '.php';
+  $scope.template='views/resource1/' + $routeParams.method + '.html';
   $scope.id= $routeParams.id
   $scope.value='';
 
