@@ -3,21 +3,15 @@
 var restrouteApp = angular.module('restrouteApp', [])
   .config(['$routeProvider', function($routeProvider) {
     $routeProvider
-      .when('/resource1/:method/:id', {
+      .when('/:ctrl/:method', {
         templateUrl: function(rp){
+          if(!rp.method) {rp.method = 'index';}
           console.log(rp); 
-          return 'views/resource1/'+rp.method+'.html';
+          return 'views/'+rp.ctrl+'/'+rp.method+'.html';
         },
-        controller: 'resource1'
-      })
-      .when('/:resource/:method/:id', {
-        templateUrl: function(rp){
-          console.log(rp); 
-          return 'views/' + rp.resource + '/'+rp.method+'.html';
-        },
-        controller: 'resource2'
+        controller: 'DynamicController'
       })
       .otherwise({
-        redirectTo: '/resource1/a/1'
+        redirectTo: '/resource1/a'
       });
   }]);

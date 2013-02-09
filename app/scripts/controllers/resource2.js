@@ -1,20 +1,21 @@
 'use strict';
 
-restrouteApp.controller(
-  'resource2', 
-  function($scope,$routeParams,$http,$log,$controller) {
-    $scope.id= $routeParams.id
-    $scope.value='';
+restrouteApp.controller('resource2', function($scope,$routeParams,$log,Resource2Service) {
 
-    $scope.run = function(id){
-      $http({
-        url:'data/' + id + '.json',
-        method:'get'
-      }).success(function(response){
-        $log.info(response);
-        $scope.value=response.value;
-      });
-    }
+  $log.info('new resource2');
 
-    $scope.run($scope.id);
+  $scope.controllername = $routeParams.ctrl;
+  $scope.r2data= Resource2Service.shared;
+
+  $scope.index = function(){
+    Resource2Service.index().then(function(){
+      //when the service returns do something
+    });
+  }
+
+  $scope.a = function(){
+    alert('called method a');
+  }
+  
+  $scope[$routeParams.method]();
 });

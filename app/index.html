@@ -24,16 +24,16 @@
         <![endif]-->
         <ul>
           <li>
-            <a href="#/resource1/a/1" >/resource1/a/1</a>
+            <a href="#/resource1/" >/resource1/</a>
           </li>
           <li>
-            <a href="#/resource1/b/1" >/resource1/b/1</a>
+            <a href="#/resource1/a" >/resource1/a</a>
           </li>
           <li>
-            <a href="#/resource2/a/1" >/resource2/a/1</a>
+            <a href="#/resource2/ " >/resource2/</a>
           </li>
           <li>
-            <a href="#/resource2/a/2" >/resource2/a/2</a>
+            <a href="#/resource2/a" >/resource2/a</a>
           </li>
         </ul>
         <!-- Add your site or application content here -->
@@ -43,9 +43,13 @@
         <script src="scripts/vendor/angularjs1.1.2.js"></script>
 
         <!-- build:js scripts/scripts.js -->
+        <script src="components/jquery/jquery.js"></script>
         <script src="scripts/app.js"></script>
+        <script src="scripts/services/Resource1Service.js"></script>
+        <script src="scripts/services/Resource2Service.js"></script>
         <script src="scripts/controllers/resource1.js"></script>
         <script src="scripts/controllers/resource2.js"></script>
+        <script src="scripts/controllers/DynamicController.js"></script>
         <!-- endbuild -->
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
