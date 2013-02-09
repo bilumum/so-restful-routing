@@ -1,6 +1,6 @@
 'use strict';
 
-restrouteApp.controller('resource2', function($scope,$routeParams,$log,Resource2Service) {
+restrouteApp.controller('resource2', function($scope, $routeParams,$log,Resource2Service) {
 
   $log.info('new resource2');
 
@@ -9,12 +9,15 @@ restrouteApp.controller('resource2', function($scope,$routeParams,$log,Resource2
 
   $scope.index = function(){
     Resource2Service.index().then(function(){
-      //when the service returns do something
+      //when the service returns 
     });
   }
 
-  $scope.a = function(){
-    alert('called method a');
+  $scope.one = function(){
+    $log.info('called method one');
+  }
+  $scope.two= function(){
+    $log.info('called method two');
   }
   
   $scope[$routeParams.method]();

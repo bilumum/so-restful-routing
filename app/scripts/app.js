@@ -6,12 +6,18 @@ var restrouteApp = angular.module('restrouteApp', [])
       .when('/:ctrl/:method', {
         templateUrl: function(rp){
           if(!rp.method) {rp.method = 'index';}
-          console.log(rp); 
+          console.log('route one'); 
           return 'views/'+rp.ctrl+'/'+rp.method+'.html';
-        },
-        controller: 'DynamicController'
+        }
+      })
+      .when('/:ctrl/:method/:id', {
+        templateUrl: function(rp){
+          if(!rp.method) {rp.method = 'index';}
+          console.log('route two'); 
+          return 'views/'+rp.ctrl+'/'+rp.method+'.html';
+        }
       })
       .otherwise({
-        redirectTo: '/resource1/a'
+        redirectTo: '/resource1/'
       });
   }]);

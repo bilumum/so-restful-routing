@@ -9,12 +9,18 @@ restrouteApp.controller('resource1', function($scope,$routeParams,$log,Resource1
 
   $scope.index = function(){
     Resource1Service.index().then(function(){
-      //when the service returns do something
+      //when the service returns
     });
   }
   
-  $scope.a = function(){
-    alert('called method a');
+  $scope.one = function(){
+    $log.info('called method one');
+    $log.info($scope);
+    $scope.r1data.selected = $scope.r1data.resources[0];
+  }
+  $scope.two= function(){
+    $log.info('called method two');
+    $scope.r1data.selected = $scope.r1data.resources[1];
   }
 
   $scope[$routeParams.method]();

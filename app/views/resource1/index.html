@@ -1,5 +1,9 @@
-<div id="resource1" ng-controller="resource1">
+<div id="resource1-index" ng-controller="resource1">
   <h1> resource1/index.html </h1>
   <h1> This is {{controllername}}</h1>
-  <h1>resource1/{{template}}/{{number}} - {{value}}</h1>
+  <ul>
+    <li ng-repeat="r in r1data.resources">
+      <a href="#{{controllername}}/{{r.value}}">{{controllername}}/{{r.value}}
+    </li>
+  </ul>
 </div>
